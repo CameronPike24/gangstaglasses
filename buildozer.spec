@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title = Opencv demo
 
 # (str) Package name
-package.name = myapp
+package.name = opencvdem
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -14,6 +14,7 @@ source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
 #source.include_exts = py,png,jpg,kv,atlas
+source.include_exts = 
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -37,7 +38,8 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,xcamera,opencv-python,opencv
+#requirements = python3,kivy,kivymd,xcamera,opencv,pathlib,numpy,utils
+requirements = python3,kivy==2.1.0,kivymd==0.104.2,xcamera==2020.613,opencv-python==4.5.5.64,pathlib,numpy,utils
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -93,7 +95,7 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET,CAMERA
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
