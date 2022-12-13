@@ -17,6 +17,22 @@ from kivymd.app import MDApp as App
 from kivymd.uix.button import MDFlatButton as Button
 from utils import define_img_size, find_faces, draw_on_faces, make_new_texture_frame
 
+try:
+ from android.permissions import request_permissions, Permission
+ request_permissions([
+ Permission.CAMERA,
+ Permission.WRITE_EXTERNAL_STORAGE,
+ Permission.READ_EXTERNAL_STORAGE,
+ Permission.INTERNET,
+ Permission.BODY_SENSORS,
+ Permission.BLUETOOTH
+ ])
+except Exception as e:
+ logging.warn(e)
+
+
+
+
 Logger.info(f"Versions: Numpy {np.__version__}")
 Logger.info(f"Versions: Opencv {cv2.__version__}")
 
